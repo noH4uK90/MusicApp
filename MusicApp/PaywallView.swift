@@ -120,11 +120,12 @@ struct PaywallView: View {
                     .font(.system(size: 21).bold())
                     .padding(.vertical, 15)
                     .frame(maxWidth: .infinity)
-                    .background(.black)
-                    .foregroundStyle(.white)
+                    .background(selected == nil ? .gray.opacity(0.2) : .black.opacity(0.8))
+                    .foregroundStyle(selected == nil ? .black : .white)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
             }
             .padding(.top)
+            .disabled(selected == nil)
         }
         .padding()
         .overlay {
